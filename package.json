@@ -1,0 +1,26 @@
+{
+  "name": "promto",
+  "version": "1.0.0",
+  "description": "Create a promise with timeout",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "zoroaster test/spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sobesednik/promto.git"
+  },
+  "keywords": [
+    "promise",
+    "timeout"
+  ],
+  "author": "Anton <anton@sobesednik.media>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sobesednik/promto/issues"
+  },
+  "homepage": "https://github.com/Sobesednik/promto#readme",
+  "devDependencies": {
+    "zoroaster": "^0.4.3"
+  }
+}
