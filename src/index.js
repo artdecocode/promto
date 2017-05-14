@@ -22,7 +22,7 @@ function makeTimeoutPromise(desc, timeout) {
     const promise = new Promise((_, reject) => {
         to = createTimeout(desc, timeout, reject)
     })
-    return { to, promise }
+    return { timeout: to, promise }
 }
 
 /**
@@ -60,7 +60,6 @@ function createPromiseWithTimeout(promise, timeout, desc) {
     }
 
     const timeoutPromise = makeTimeoutPromise(desc, timeout)
-
     return Promise.race([
         promise,
         timeoutPromise.promise,
