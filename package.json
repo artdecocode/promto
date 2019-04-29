@@ -1,6 +1,6 @@
 {
   "name": "promto",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Create a promise with a timeout.",
   "main": "build/index.js",
   "module": "src/index.js",
