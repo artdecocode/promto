@@ -1,26 +1,42 @@
 {
   "name": "promto",
   "version": "1.0.0",
-  "description": "Create a promise with timeout",
-  "main": "src/index.js",
+  "description": "Create a promise with a timeout.",
+  "build": "build/index.js",
+  "module": "src/index.js",
   "scripts": {
-    "test": "zoroaster test/spec"
+    "t": "zoroaster -a",
+    "test": "yarn t test/spec",
+    "spec": "yarn t test/spec",
+    "mask": "yarn t test/mask",
+    "test-build": "ALAMODE_ENV=test-build yarn test",
+    "lint": "eslint .",
+    "doc": "NODE_DEBUG=doc doc -o README.md -n _contextTesting",
+    "b": "alamode src -o build -s",
+    "d": "yarn-s d1",
+    "d1": "typal src/index.js -c",
+    "externs": "typal externs.js -e",
+    "build": "yarn-s d b doc",
+    "e": "alanode",
+    "example/": "yarn e example/example.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sobesednik/promto.git"
+    "url": "git://github.com/artdecocode/promto.git"
   },
   "keywords": [
     "promise",
     "timeout"
   ],
-  "author": "Anton <anton@sobesednik.media>",
+  "author": "Anton <anton@adc.sh>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Sobesednik/promto/issues"
   },
   "homepage": "https://github.com/Sobesednik/promto#readme",
   "devDependencies": {
-    "zoroaster": "^0.4.3"
+    "alamode": "^2.0.0",
+    "documentary": "^1.26.2",
+    "zoroaster": "^3.13.0"
   }
 }

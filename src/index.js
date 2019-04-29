@@ -1,28 +1,26 @@
-'use strict'
-
 function isString(value) {
-    return (typeof value).toLowerCase() === 'string'
+  return (typeof value).toLowerCase() === 'string'
 }
 
 function isNumber(value) {
-    return (typeof value).toLowerCase() === 'number'
+  return (typeof value).toLowerCase() === 'number'
 }
 
 function createTimeout(desc, timeout, cb) {
-    return setTimeout(() => {
-        const message = `${isString(desc) ? desc : 'Promise'} has timed out after ${timeout}ms`
-        const err = new Error(message)
-        err.stack = `Error: ${message}`
-        cb(err)
-    }, timeout)
+  return setTimeout(() => {
+    const message = `${isString(desc) ? desc : 'Promise'} has timed out after ${timeout}ms`
+    const err = new Error(message)
+    err.stack = `Error: ${message}`
+    cb(err)
+  }, timeout)
 }
 
 function makeTimeoutPromise(desc, timeout) {
-    let to
-    const promise = new Promise((_, reject) => {
-        to = createTimeout(desc, timeout, reject)
-    })
-    return { timeout: to, promise }
+  let to
+  const promise = new Promise((_, reject) => {
+    to = createTimeout(desc, timeout, reject)
+  })
+  return { timeout: to, promise }
 }
 
 /**
@@ -32,9 +30,9 @@ function makeTimeoutPromise(desc, timeout) {
  * @param {Error} [err] What to throw after clearing
  */
 function transientClearTimeout(timeout, res, err) {
-    clearTimeout(timeout)
-    if (err) throw err
-    return res
+  clearTimeout(timeout)
+  if (err) throw err
+  return res
 }
 
 /**
@@ -45,28 +43,28 @@ function transientClearTimeout(timeout, res, err) {
  * @returns {Promise} A promise with a timeout
  */
 function createPromiseWithTimeout(promise, timeout, desc) {
-    try {
-        if (!(promise instanceof Promise)) {
-            throw new Error('Promise expected')
-        }
-        if (!isNumber(timeout)) {
-            throw new Error('Timeout must be a number')
-        }
-        if (timeout < 0) {
-            throw new Error('Timeout cannot be negative')
-        }
-    } catch (err) {
-        return Promise.reject(err)
+  try {
+    if (!(promise instanceof Promise)) {
+      throw new Error('Promise expected')
     }
+    if (!isNumber(timeout)) {
+      throw new Error('Timeout must be a number')
+    }
+    if (timeout < 0) {
+      throw new Error('Timeout cannot be negative')
+    }
+  } catch (err) {
+    return Promise.reject(err)
+  }
 
-    const timeoutPromise = makeTimeoutPromise(desc, timeout)
-    return Promise.race([
-        promise,
-        timeoutPromise.promise,
-    ]).then(
-        transientClearTimeout.bind(null, timeoutPromise.timeout),
-        transientClearTimeout.bind(null, timeoutPromise.timeout, null)
-    )
+  const timeoutPromise = makeTimeoutPromise(desc, timeout)
+  return Promise.race([
+    promise,
+    timeoutPromise.promise,
+  ]).then(
+    transientClearTimeout.bind(null, timeoutPromise.timeout),
+    transientClearTimeout.bind(null, timeoutPromise.timeout, null)
+  )
 }
 
 module.exports = createPromiseWithTimeout
