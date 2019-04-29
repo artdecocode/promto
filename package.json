@@ -11,7 +11,7 @@
     "mask": "yarn t test/mask",
     "test-build": "ALAMODE_ENV=test-build yarn test",
     "lint": "eslint .",
-    "doc": "NODE_DEBUG=doc doc -o README.md -n _contextTesting",
+    "doc": "NODE_DEBUG=doc doc -o README.md",
     "b": "alamode src -o build -s",
     "d": "yarn-s d1",
     "d1": "typal src/index.js -c",
@@ -26,7 +26,8 @@
   },
   "keywords": [
     "promise",
-    "timeout"
+    "timeout",
+    "async"
   ],
   "author": "Anton <anton@adc.sh>",
   "license": "MIT",
