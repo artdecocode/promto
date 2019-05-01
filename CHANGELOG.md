@@ -1,3 +1,9 @@
+## 1 May 2019
+
+### [1.1.2](https://github.com/artdecocode/promto/compare/v1.1.1...v1.1.2)
+
+- [fix] Add `Error: ` to the error stack.
+
 ## 29 April 2019
 
 ### [1.1.1](https://github.com/artdecocode/promto/compare/v1.1.0...v1.1.1)

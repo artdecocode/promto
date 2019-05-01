@@ -2,7 +2,7 @@ function createTimeout(desc, timeout, cb) {
   return setTimeout(() => {
     const message = `${desc ? desc : 'Promise'} has timed out after ${timeout}ms`
     const err = new Error(message)
-    err.stack = err.message
+    err.stack = `Error: ${err.message}`
     cb(err)
   }, timeout)
 }
