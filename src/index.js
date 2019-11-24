@@ -17,10 +17,11 @@ function makeTimeoutPromise(desc, timeout) {
 
 /**
  * Create a promise which will be rejected after a timeout.
- * @param {!Promise} promise A promise to race with
+ * @param {!Promise<T>} promise A promise to race with
  * @param {number} timeout Timeout in ms after which to reject
  * @param {string} [desc] Description of a promise to be printed in error
- * @returns {!Promise} A promise with a timeout
+ * @returns {!Promise<T>} A promise with a timeout
+ * @template T
  */
 export default async function createPromiseWithTimeout(promise, timeout, desc) {
   if (!(promise instanceof Promise))

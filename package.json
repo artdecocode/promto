@@ -39,8 +39,8 @@
   },
   "homepage": "https://github.com/Sobesednik/promto#readme",
   "devDependencies": {
-    "alamode": "^2.0.0",
-    "documentary": "^1.26.2",
-    "zoroaster": "^3.13.0"
+    "alamode": "^3.2.0",
+    "documentary": "^1.34.1",
+    "zoroaster": "^4.1.2"
   }
 }

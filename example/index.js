@@ -1,5 +1,9 @@
 import promto from '../src'
 
+/**
+ * @param {number} timeout
+ * @param {string|Error} result
+ */
 const makePromise = async (timeout, result) => {
   await new Promise((resolve) => {
     setTimeout(resolve, timeout || 200)

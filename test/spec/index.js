@@ -1,5 +1,5 @@
 import promto from '../../src'
-import { throws, equal } from 'zoroaster/assert'
+import { throws, equal } from '@zoroaster/assert'
 
 const makePromise = async (timeout, result) => {
   await new Promise((resolve) => {
