@@ -1,3 +1,9 @@
+## 25 November 2019
+
+### [1.2.0](https://github.com/artdecocode/promto/compare/v1.1.2...v1.2.0)
+
+- [doc] Document the promise using `@template`.
+
 ## 1 May 2019
 
 ### [1.1.2](https://github.com/artdecocode/promto/compare/v1.1.1...v1.1.2)

@@ -1,6 +1,6 @@
 # promto
 
-[![npm version](https://badge.fury.io/js/promto.svg)](https://npmjs.org/package/promto)
+[![npm version](https://badge.fury.io/js/promto.svg)](https://www.npmjs.com/package/promto)
 
 `promto` Wrappes A Promise In Timeout.
 
@@ -15,7 +15,9 @@ yarn add promto
 - [`async promto(promise: Promise, timeout: number, description: string?): Promise`](#async-promtopromise-promisetimeout-numberdescription-string-promise)
 - [Copyright](#copyright)
 
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/0.svg?sanitize=true"></a></p>
+<p align="center"><a href="#table-of-contents">
+  <img src="/.documentary/section-breaks/0.svg?sanitize=true">
+</a></p>
 
 ## API
 
@@ -25,15 +27,21 @@ The package is available by importing its default function:
 import promto from 'promto'
 ```
 
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
+<p align="center"><a href="#table-of-contents">
+  <img src="/.documentary/section-breaks/1.svg?sanitize=true">
+</a></p>
 
-## `async promto(`<br/>&nbsp;&nbsp;`promise: Promise,`<br/>&nbsp;&nbsp;`timeout: number,`<br/>&nbsp;&nbsp;`description: string?,`<br/>`): Promise`
+## <code>async <ins>promto</ins>(</code><sub><br/>&nbsp;&nbsp;`promise: Promise,`<br/>&nbsp;&nbsp;`timeout: number,`<br/>&nbsp;&nbsp;`description: string?,`<br/></sub><code>): <i>Promise</i></code>
 
 Creates a new promise which will be rejected upon timeout (after N milliseconds). It will be resolved with the promise value or rejected with the promise error when not timed out.
 
 ```js
 import promto from 'promto'
 
+/**
+ * @param {number} timeout
+ * @param {string|Error} result
+ */
 const makePromise = async (timeout, result) => {
   await new Promise((resolve) => {
     setTimeout(resolve, timeout || 200)
@@ -73,7 +81,9 @@ Example has timed out after 100ms
 Error in promise
 ```
 
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true"></a></p>
+<p align="center"><a href="#table-of-contents">
+  <img src="/.documentary/section-breaks/2.svg?sanitize=true">
+</a></p>
 
 ## Copyright
 
@@ -81,18 +91,21 @@ Error in promise
   <tr>
     <th>
       <a href="https://artd.eco">
-        <img src="https://raw.githubusercontent.com/wrote/wrote/master/images/artdeco.png" alt="Art Deco" />
+        <img width="100" src="https://raw.githubusercontent.com/wrote/wrote/master/images/artdeco.png"
+          alt="Art Deco">
       </a>
     </th>
     <th>© <a href="https://artd.eco">Art Deco</a>   2019</th>
     <th>
       <a href="https://www.technation.sucks" title="Tech Nation Visa">
-        <img src="https://raw.githubusercontent.com/artdecoweb/www.technation.sucks/master/anim.gif"
-          alt="Tech Nation Visa" />
+        <img width="100" src="https://raw.githubusercontent.com/idiocc/cookies/master/wiki/arch4.jpg"
+          alt="Tech Nation Visa">
       </a>
     </th>
     <th><a href="https://www.technation.sucks">Tech Nation Visa Sucks</a></th>
   </tr>
 </table>
 
-<p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/-1.svg?sanitize=true"></a></p>
+<p align="center"><a href="#table-of-contents">
+  <img src="/.documentary/section-breaks/-1.svg?sanitize=true">
+</a></p>
